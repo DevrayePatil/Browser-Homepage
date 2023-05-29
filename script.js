@@ -1,60 +1,28 @@
 const apps = [
   {
-    name: "StackOver Flow",
-    icon: "fa-brands fa-stack-overflow",
-    url: "https://stackoverflow.com",
+    name: 'Chat gpt',
+    icon: './assets/chatgpt.svg',
+    url: 'https://chat.openai.com'
+  },
+  {
+    name: "Leet Code",
+    icon: "./assets/leetcode.svg",
+    url: "https://leetcode.com",
   },
   {
     name: "Github",
-    icon: "fa-brands fa-github",
+    icon: "./assets/github.svg",
     url: "https://github.com",
   },
   {
-    name: "Twitter",
-    icon: "fa-brands fa-twitter",
-    url: "https://twitter.com",
+    name: "Codepen",
+    icon: "./assets/codepen.svg",
+    url: "https://codepen.ip",
   },
 ];
 
-const chromeApps = [
-  {
-    name: "Apps",
-    icon: "fa-solid fa-grid-round",
-    url: "chrome://apps/",
-  },
-  {
-    name: "Bookmarks",
-    icon: "fa-solid fa-star",
-    url: "chrome://bookmarks/",
-  },
-  {
-    name: "History",
-    icon: "fa-solid fa-history",
-    url: "chrome://history/",
-  },
-  {
-    name: "Downloads",
-    icon: "fa-solid fa-download",
-    url: "chrome://downloads/",
-  },
-  {
-    name: "Extensions",
-    icon: "fa-solid fa-puzzle-piece",
-    url: "chrome://extensions/",
-  },
-  {
-    name: "Settings",
-    icon: "fa-solid fa-cog",
-    url: "chrome://settings/",
-  },
-  {
-    name: "Version",
-    icon: "fa-solid fa-slider",
-    url: "chrome://version/",
-  }
-];
 
-const chromeContainer = document.querySelector(".chrome-container");
+
 const appsContainer = document.querySelector("#apps-container");
 const searchInput = document.getElementById("search-input-container");
 
@@ -64,17 +32,11 @@ searchInput.addEventListener("keypress", function (event) {
   }
 });
 
-chromeApps.forEach(app =>{
-  const appCard = `<div class="chrome-app" onclick="goToLink('${app.url}')">
-  <i class="${app.icon}"></i>
-</div>`
 
-  chromeContainer.innerHTML += appCard;
-})
 apps.forEach((app) => {
   const appUrl = shortUrl(app.url);
   const appCard = `<div class="app-card" onclick="goToLink('${app.url}')">
-                            <i class="${app.icon}"></i>
+                            <img class="app-icon"  src="${app.icon}"></img>
                             <div class="card-body">
                                 <span class="app-name">${app.name}</span>
                                 <span class="app-url">${appUrl}</span>

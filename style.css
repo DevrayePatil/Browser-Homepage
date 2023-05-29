@@ -226,6 +226,11 @@ input {
     grid-template-columns: repeat(2, 50%);
 }
 
+.app-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
 .app-card{
     display: flex;
     align-items: center;
